@@ -6,15 +6,25 @@ import java.util.Random;
 
 public class ProblemSolver {
 	
-	public static String OUTPUT = "";
+	public String OUTPUT = "";
 	private int score = Integer.MIN_VALUE;
 	
+	/*
+	 * ADD RELEVANT ATTRIBUTES DESCRIBING THE PROBLEM HERE
+	 * 
+	 * ALL RELEVANT ATTRIBUTES TO STORE SOLUTION TO PROBLEM
+	 */
+	
 	public ProblemSolver() {
-		
+		/*
+		 * EXTEND TO RECEIVE RELEVANT DATA FOR PROBLEM HERE
+		 */
 	}
 	
 	public void solve() {
-		
+		/*
+		 * IMPLEMENT TO SOLVE THE PROBLEM HERE. STORE IN CLASS VARIABLES
+		 */
 		calculateScore();
 	}
 	
@@ -23,6 +33,9 @@ public class ProblemSolver {
 	}
 	
 	private void calculateScore() {
+		/*
+		 * IMPLEMENT TO CALCULATE THE SCORE OF THE SOLUTION HERE. STORE IN CLASS VARIABLE
+		 */
 		Random rand = new Random();
 		score = rand.nextInt(400000);
 	}

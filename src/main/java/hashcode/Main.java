@@ -8,24 +8,34 @@ public class Main {
 	public static int PROCESS_ID;
 	
 	public static void main(String[] args) throws FileNotFoundException {
+		//Set a random number to prevent equal file names
 		Random rand = new Random();
 		PROCESS_ID = rand.nextInt(400000);
 		
+		//Get run time defined variable, if any. Can be used for something. Defaults to 40 
 		String var = System.getenv("ITERATIONS");
 		int attempts = var != null ? Integer.parseInt(var) : 40;
-		System.out.println("Attempts: " + attempts);
+		System.out.println("CUSTOM VARIABLE: " + attempts);
 		
-		String inputPath = "";
-		Parser parser = new Parser(inputPath);
-		parser.parse();
+		//Parse file
+		String inputPath; /*"INPUT_FILE_NAME_HERE"*/ /* path is relative to git repo root path */
+		//Parser parser = new Parser(inputPath);
+		//parser.parse();
 		
+		//Create variable for storing current best score
 		int bestScore = Integer.MIN_VALUE;
 		int iterations = 0;
 		
+		
+		//Initiate while loop for endless trying
 		while(true) {
-			// Get all data from parser via getters
 			
-			ProblemSolver ps = new ProblemSolver();
+			/*
+			 * GET ALL DATA FROM PARSER HERE.
+			 * THIS WILL BE A FRESH COPY OF DATA, THAT IS UNRELATED TO PREVIEOUS ITERATIONS
+			 */
+			
+			ProblemSolver ps = new ProblemSolver(/*ADD RELEVANT DATA FOR PROBLEM HERE*/);
 			ps.solve();
 			int score = ps.getScore();
 			
@@ -36,10 +46,10 @@ public class Main {
 				System.out.println("Find it in file " + fileName);
 			}
 			
-			iterations++;
-			if(iterations%20000 == 0) {
+			if(iterations%100000 == 0) {
 				System.out.println("On iteration: " + iterations);
 			}
+			iterations++;
 			
 		}
 		
