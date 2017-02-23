@@ -35,7 +35,7 @@ public class Main {
 			 * THIS WILL BE A FRESH COPY OF DATA, THAT IS UNRELATED TO PREVIEOUS ITERATIONS
 			 */
 			
-			ProblemSolver ps = new ProblemSolver(/*ADD RELEVANT DATA FOR PROBLEM HERE*/);
+			ProblemSolver ps = new ProblemSolver(Video[] videos, Endpoint[] endpoints, CacheServer[] cacheServers);
 			ps.solve();
 			int score = ps.getScore();
 			
