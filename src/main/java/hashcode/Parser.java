@@ -24,7 +24,7 @@ public class Parser {
 		
 		
 	public void  parse(String inputPath) {
-		File file = new File(inputPath);
+		File file = new File("input/" + inputPath + ".in");
 		try {
 			scan = new Scanner(file);
 			

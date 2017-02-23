@@ -7,6 +7,10 @@ import java.util.Random;
 public class Main {
 	
 	public static int PROCESS_ID;
+	//public static String inputPath = "kittens";
+	//public static String inputPath = "me_at_the_zoo";
+	//public static String inputPath = "trending_today";
+	public static String inputPath = "videos_worth_spreading";
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		//Set a random number to prevent equal file names
@@ -19,10 +23,7 @@ public class Main {
 		System.out.println("CUSTOM VARIABLE: " + attempts);
 		
 		//Parse file
-		//String inputPath = "input/kittens.in";
-		//String inputPath = "input/me_at_the_zoo.in";
-		//String inputPath = "input/trending_today.in";
-		String inputPath = "input/videos_worth_spreading.in";
+		
 		Parser parser = new Parser();
 		
 		System.out.println("Starting to parse");

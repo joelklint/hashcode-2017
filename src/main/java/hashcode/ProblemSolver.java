@@ -134,7 +134,7 @@ public class ProblemSolver {
 	}
 
 	public String printToFile() {
-		String fileName = "output/score:" + getScore() + "&pid:" + Main.PROCESS_ID;
+		String fileName = "output/score:" + getScore() + "&file:" + Main.inputPath;
 		PrintWriter out;
 		try {
 			out = new PrintWriter(fileName);
