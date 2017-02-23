@@ -36,6 +36,10 @@ public class CacheServer {
 	public boolean isFull() {
 		return full;
 	}
+
+	public boolean hasVideos(){
+		return videos.size() > 0;
+	}
 			
 			
 }
