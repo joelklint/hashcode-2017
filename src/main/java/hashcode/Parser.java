@@ -116,6 +116,20 @@ public class Parser {
 		
 	}
 	
+	public ArrayList<Video> getVideos(){
+		ArrayList<Video> videoCopy = (ArrayList<Video>) allVideos.clone();
+		return videoCopy;
+	}
+	
+	public ArrayList<Endpoint> getEndpoints(){
+		ArrayList<Endpoint> endpointCopy = (ArrayList<Endpoint>) allEndpoints.clone();
+		return endpointCopy;
+	}
+	
+	public ArrayList<CacheServer> getCacheServers(){
+		ArrayList<CacheServer> cacheServerCopy = (ArrayList<CacheServer>) allCacheServers.clone();
+		return cacheServerCopy;
+	}
 
 		// Scanner already initiated. Example use below
 		
