@@ -1,15 +1,19 @@
 package hashcode;
 
 import java.util.HashMap;
+import java.util.TreeMap;
 
 public class Endpoint {
-	private int id;
-	private HashMap<Video, Integer> videoRequests;
-	private HashMap<CacheServer, Integer> cacheLatancy;
+	public int id;
+	public int dataCenterLatancy;
+	// ID: REQGUESTS
+	public HashMap<Integer, Integer> videoRequests;
+	//ID: Latency 
+	public TreeMap<Integer, Integer> cacheLatancies;
 	
 	public Endpoint(int id) {
 		this.id = id;
-		this.videoRequests = new HashMap<Video, Integer>();
-		this.cacheLatancy = new HashMap<CacheServer, Integer>();
+		this.videoRequests = new HashMap<Integer, Integer>();
+		this.cacheLatancies = new TreeMap<Integer, Integer>();
 	}
 }
