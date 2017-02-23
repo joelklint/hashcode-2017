@@ -41,7 +41,7 @@ public class ProblemSolver {
 			while(!cacheServer.isFull()) {
 				// Fyll den
 				
-				Video video = videos.remove(rand.nextInt(videos.size));
+				Video video = videos.remove(rand.nextInt(videos.size()));
 				addedVideos.add(video);
 				
 				boolean success = cacheServer.add(video);				
@@ -71,10 +71,10 @@ public class ProblemSolver {
 				nrCacheServersUsed++;
 				
 				// build cache row
-				cacheDescription += cacheServer.getId();
-				ArrayList<Video> cacheVideos = cacheServer.getVideos();
+				cacheDescription += cacheServer.id;
+				ArrayList<Video> cacheVideos = cacheServer.videos;
 				for(Video video : cacheVideos) {
-					cacheDescription += " " + video.getId();
+					cacheDescription += " " + video.id;
 				}
 				cacheDescription += "\n";
 			}
