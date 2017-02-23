@@ -19,7 +19,10 @@ public class Main {
 		System.out.println("CUSTOM VARIABLE: " + attempts);
 		
 		//Parse file
-		String inputPath = "input/videos_worth_spreading.in"; /*"INPUT_FILE_NAME_HERE"*/ /* path is relative to git repo root path */
+		//String inputPath = "input/kittens.in";
+		//String inputPath = "input/me_at_the_zoo.in";
+		String inputPath = "input/trending_today.in";
+		//String inputPath = "input/videos_worth_spreading.in";
 		Parser parser = new Parser();
 		
 		System.out.println("Starting to parse");
