@@ -44,7 +44,7 @@ public class Main {
 			ArrayList<Endpoint> endpoints = parser.getEndpoints();
 			ArrayList<CacheServer> cacheServers = parser.getCacheServers();
 			
-			ProblemSolver ps = new ProblemSolver(ArrayList<Video> videos, ArrayList<Endpoint> endpoints, ArrayList<CacheServer> cacheServers);
+			ProblemSolver ps = new ProblemSolver(videos, endpoints, cacheServers);
 			ps.solve();
 			int score = ps.getScore();
 			
