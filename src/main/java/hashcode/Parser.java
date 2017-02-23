@@ -10,9 +10,9 @@ public class Parser {
 	
 	
 	
-	private ArrayList<Video> allVideos;
-	private ArrayList<CacheServer> allCacheServers;
-	private ArrayList<Endpoint> allEndpoints;
+	public ArrayList<Video> allVideos;
+	public ArrayList<CacheServer> allCacheServers;
+	public ArrayList<Endpoint> allEndpoints;
 	
 	Scanner scan;
 	

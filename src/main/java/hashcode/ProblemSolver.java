@@ -3,11 +3,7 @@ package hashcode;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
-import java.util.TreeMap;
-
-import javax.xml.ws.Endpoint;
 
 public class ProblemSolver {
 	
@@ -66,7 +62,7 @@ public class ProblemSolver {
 		
 		// build all cache rows
 		for(CacheServer cacheServer : cacheServers) {
-			boolean hasVideos = cacheServer.hasVideoes();
+			boolean hasVideos = cacheServer.hasVideos();
 			if(hasVideos) {
 				nrCacheServersUsed++;
 				
@@ -81,6 +77,8 @@ public class ProblemSolver {
 		}
 		
 		cacheDescription = nrCacheServersUsed + "\n" + cacheDescription;
+		OUTPUT = cacheDescription;
+		OUTPUT = OUTPUT.trim();
 	}
 	
 	private void calculateScore() {

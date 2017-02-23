@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 
-
-
 public class Main {
 	
 	public static int PROCESS_ID;
@@ -40,11 +38,11 @@ public class Main {
 			 * THIS WILL BE A FRESH COPY OF DATA, THAT IS UNRELATED TO PREVIEOUS ITERATIONS
 			 */
 			
-			ArrayList<Video> videos = parser.getVideos();
-			ArrayList<Endpoint> endpoints = parser.getEndpoints();
-			ArrayList<CacheServer> cacheServers = parser.getCacheServers();
+			//ArrayList<Video> videos = parser.getVideos();
+			//ArrayList<Endpoint> endpoints = parser.getEndpoints();
+			//ArrayList<CacheServer> cacheServers = parser.getCacheServers();
 			
-			ProblemSolver ps = new ProblemSolver(videos, endpoints, cacheServers);
+			ProblemSolver ps = new ProblemSolver(parser.allVideos, parser.allEndpoints, parser.allCacheServers);
 			ps.solve();
 			int score = ps.getScore();
 			
@@ -55,9 +53,11 @@ public class Main {
 				System.out.println("Find it in file " + fileName);
 			}
 			
-			if(iterations%100000 == 0) {
+			ps.printToFile();
+			
+			//if(iterations%100000 == 0) {
 				System.out.println("On iteration: " + iterations);
-			}
+			//}
 			iterations++;
 			
 		//}
