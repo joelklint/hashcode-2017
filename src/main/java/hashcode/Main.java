@@ -21,9 +21,11 @@ public class Main {
 		System.out.println("CUSTOM VARIABLE: " + attempts);
 		
 		//Parse file
-		String inputPath; /*"INPUT_FILE_NAME_HERE"*/ /* path is relative to git repo root path */
-		//Parser parser = new Parser(inputPath);
-		//parser.parse();
+		String inputPath = "input/videos_worth_spreading.in"; /*"INPUT_FILE_NAME_HERE"*/ /* path is relative to git repo root path */
+		Parser parser = new Parser();
+		
+		System.out.println("Starting to parse");
+		parser.parse(inputPath);
 		
 		//Create variable for storing current best score
 		int bestScore = Integer.MIN_VALUE;
@@ -31,7 +33,7 @@ public class Main {
 		
 		
 		//Initiate while loop for endless trying
-		while(true) {
+		//while() {
 			
 			/*
 			 * GET ALL DATA FROM PARSER HERE.
@@ -58,7 +60,7 @@ public class Main {
 			}
 			iterations++;
 			
-		}
+		//}
 		
 		
 		

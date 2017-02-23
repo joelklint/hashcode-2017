@@ -6,12 +6,12 @@ public class CacheServer {
 	
 	public int id;
 	public int capacity;
-	public ArrayList<Video> allVideos;
+	public ArrayList<Video> cacheVideos;
 	
 	public CacheServer(int id, int capacity) {
 		this.id = id;
 		this.capacity = capacity;
-		this.allVideos = new ArrayList<>();
+		this.cacheVideos = new ArrayList<>();
 		
 	}
 			
