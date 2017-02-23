@@ -51,12 +51,35 @@ public class ProblemSolver {
 				
 		}
 		
-		
+		createOutputString();
 		calculateScore();
 	}
 	
 	public int getScore() {
 		return score;
+	}
+	
+	private void createOutputString() {
+		int nrCacheServersUsed = 0;
+		String cacheDescription = "";
+		
+		// build all cache rows
+		for(CacheServer cacheServer : cacheServer) {
+			boolean hasVideos = cacheServer.hasVideoes();
+			if(hasVideos) {
+				nrCacheServersUsed++;
+				
+				// build cache row
+				cacheDescription += cacheServer.getId();
+				ArrayList<Video> cacheVideos = cacheServer.getVideos();
+				for(Video video : cacheVideos) {
+					cacheDescription += " " + video.getId();
+				}
+				cacheDescription += "\n";
+			}
+		}
+		
+		cacheDescription = nrCacheServersUsed + "\n" + cacheDescription;
 	}
 	
 	private void calculateScore() {
