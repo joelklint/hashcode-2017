@@ -19,6 +19,18 @@ public class CacheServer {
 		
 	}
 	
+	public void clean() {
+		videos = new ArrayList<Video>();
+		full = false;
+	}
+	
+	
+	public boolean hasVideo(Video video){
+		return videos.contains(video);
+	}
+	
+	
+	
 	public boolean add(Video video) {
 		if(capacityLeft >= video.size) {
 			videos.add(video);

@@ -16,4 +16,5 @@ public class Endpoint {
 		this.videoRequests = new HashMap<Integer, Integer>();
 		this.cacheLatancies = new TreeMap<Integer, Integer>();
 	}
+	
 }

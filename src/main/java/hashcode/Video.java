@@ -10,4 +10,20 @@ public class Video {
 		this.size = size;
 	}
 	
+	
+	public boolean equals(Object video){
+		if(video instanceof Video) {
+			Video input = (Video)video;
+			if(input.id==this.id) {
+			
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
 }
