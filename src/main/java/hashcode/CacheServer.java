@@ -14,6 +14,10 @@ public class CacheServer {
 		this.cacheVideos = new ArrayList<>();
 		
 	}
+	
+	public boolean hasVideos(){
+		return cacheVideos.size() > 0;
+	}
 			
 			
 }
