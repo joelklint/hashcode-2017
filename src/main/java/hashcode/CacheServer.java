@@ -16,7 +16,7 @@ public class CacheServer {
 	}
 	
 	public boolean hasVideos(){
-		return cacheVideos.size() > 0;
+		return videos.size() > 0;
 	}
 			
 			
