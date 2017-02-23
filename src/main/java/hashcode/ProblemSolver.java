@@ -3,8 +3,9 @@ package hashcode;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
+import java.util.TreeMap;
 
 import javax.xml.ws.Endpoint;
 
@@ -64,7 +65,7 @@ public class ProblemSolver {
 		String cacheDescription = "";
 		
 		// build all cache rows
-		for(CacheServer cacheServer : cacheServer) {
+		for(CacheServer cacheServer : cacheServers) {
 			boolean hasVideos = cacheServer.hasVideoes();
 			if(hasVideos) {
 				nrCacheServersUsed++;
@@ -84,10 +85,32 @@ public class ProblemSolver {
 	
 	private void calculateScore() {
 		/*
-		 * IMPLEMENT TO CALCULATE THE SCORE OF THE SOLUTION HERE. STORE IN CLASS VARIABLE
-		 */
-		Random rand = new Random();
-		score = rand.nextInt(400000);
+		for(Endpoint endpoint : endpoints) {
+			int dataCenterLatency = endpoint.getDataCenterLatency();
+			
+			
+			HashMap<Integer, Integer> requests = endpoint.getRequests();
+			TreeMap<Integer, Integer> cacheLatencies = endpoint.getCacheLatencies();			
+			
+			ArraySet<Integer> latency_values = latencies.keySet();
+			
+			for(Integer videoId : requests.keySet()) {
+				
+				Iterator itr = sortedCacheLatencies.iterator();
+				itr.next();
+				cacheIndex = sortedCacheLatencies.
+				
+				Cache cache = cacheServers.get(index)
+				
+				// Hitta närmaste cacheservern
+				// kolla om den finns där
+					// om den gör det räkna ut saker
+					// om inte, gå vidare till nästa cache
+				
+			}
+			
+		}
+		*/
 	}
 	
 	public String printToFile() {
