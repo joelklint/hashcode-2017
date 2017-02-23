@@ -2,34 +2,84 @@ package hashcode;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
+
+import javax.xml.ws.Endpoint;
 
 public class ProblemSolver {
 	
 	public String OUTPUT = "";
 	private int score = Integer.MIN_VALUE;
 	
-	/*
-	 * ADD RELEVANT ATTRIBUTES DESCRIBING THE PROBLEM HERE
-	 * 
+	private ArrayList<Video> videos;
+	private ArrayList<Endpoint> endpoints;
+	private ArrayList<CacheServer> cacheServers;
+	
+	/* 
 	 * ALL RELEVANT ATTRIBUTES TO STORE SOLUTION TO PROBLEM
 	 */
 	
-	public ProblemSolver() {
-		/*
-		 * EXTEND TO RECEIVE RELEVANT DATA FOR PROBLEM HERE
-		 */
+	public ProblemSolver(ArrayList<Video> videos, ArrayList<Endpoint> endpoints, ArrayList<CacheServer> cacheServers) {
+		this.videos = videos;
+		this.endpoints = endpoints;
+		this.cacheServers = cacheServers;
 	}
 	
 	public void solve() {
-		/*
-		 * IMPLEMENT TO SOLVE THE PROBLEM HERE. STORE IN CLASS VARIABLES
-		 */
+		Random rand = new Random();
+		
+		//Collections.shuffle(videos);
+		
+		for(CacheServer cacheServer : cacheServers) {
+			
+			ArrayList<Video> addedVideos = new ArrayList<Video>();
+			
+			
+			while(!cacheServer.isFull()) {
+				// Fyll den
+				
+				Video video = videos.remove(rand.nextInt(videos.size));
+				addedVideos.add(video);
+				
+				boolean success = cacheServer.add(video);				
+				
+			}
+			
+			videos.addAll(addedVideos);
+				
+		}
+		
+		createOutputString();
 		calculateScore();
 	}
 	
 	public int getScore() {
 		return score;
+	}
+	
+	private void createOutputString() {
+		int nrCacheServersUsed = 0;
+		String cacheDescription = "";
+		
+		// build all cache rows
+		for(CacheServer cacheServer : cacheServer) {
+			boolean hasVideos = cacheServer.hasVideoes();
+			if(hasVideos) {
+				nrCacheServersUsed++;
+				
+				// build cache row
+				cacheDescription += cacheServer.getId();
+				ArrayList<Video> cacheVideos = cacheServer.getVideos();
+				for(Video video : cacheVideos) {
+					cacheDescription += " " + video.getId();
+				}
+				cacheDescription += "\n";
+			}
+		}
+		
+		cacheDescription = nrCacheServersUsed + "\n" + cacheDescription;
 	}
 	
 	private void calculateScore() {
