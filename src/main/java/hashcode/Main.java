@@ -1,7 +1,10 @@
 package hashcode;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Random;
+
+import javax.xml.ws.Endpoint;
 
 public class Main {
 	
@@ -35,7 +38,11 @@ public class Main {
 			 * THIS WILL BE A FRESH COPY OF DATA, THAT IS UNRELATED TO PREVIEOUS ITERATIONS
 			 */
 			
-			ProblemSolver ps = new ProblemSolver(Video[] videos, Endpoint[] endpoints, CacheServer[] cacheServers);
+			ArrayList<Video> videos = parser.getVideos();
+			ArrayList<Endpoint> endpoints = parser.getEndpoints();
+			ArrayList<CacheServer> cacheServers = parser.getCacheServers();
+			
+			ProblemSolver ps = new ProblemSolver(ArrayList<Video> videos, ArrayList<Endpoint> endpoints, ArrayList<CacheServer> cacheServers);
 			ps.solve();
 			int score = ps.getScore();
 			
